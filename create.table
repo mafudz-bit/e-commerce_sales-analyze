@@ -1,0 +1,26 @@
+CREATE TABLE blinkit.blinkit_customers (
+customer_id INT PRIMARY KEY,
+customer_name VARCHAR (100),
+email VARCHAR (200),
+phone VARCHAR (20),
+address VARCHAR (200),
+area VARCHAR (100),
+pincode INT,
+regristration_date DATE,
+customer_segment VARCHAR,
+total_orders INT,
+avg_order_value FLOAT 
+);
+
+CREATE TABLE blinkit.blinkit_products (
+product_id INT PRIMARY KEY,
+product_name VARCHAR(100),
+category VARCHAR (100),
+brand VARCHAR (100),
+price FLOAT,
+mrp FLOAT,
+margin_percentage FLOAT,
+shelf_life_days FLOAT,
+min_stock_level INT,
+max_stock_level INT
+);
