@@ -1,0 +1,38 @@
+CREATE TABLE sales.customers (
+CustomerID INT PRIMARY KEY,
+Age FLOAT,
+City VARCHAR (100),
+SignupDate DATE,
+CustomerSegment VARCHAR (100)
+);
+
+CREATE TABLE sales.products(
+ProductID INT PRIMARY KEY,
+ProductName VARCHAR (100),
+Category VARCHAR (100),
+UnitPrice FLOAT
+);
+
+CREATE TABLE sales.orders(
+OrderID INT PRIMARY KEY,
+CustomerID INT,
+OrderDate DATE,
+ProductID INT,
+Quantity FLOAT,
+Discount FLOAT,
+PaymentMethod VARCHAR(50),
+Status VARCHAR (50),
+FOREIGN KEY (CustomerID)
+REFERENCES sales.customers(CustomerID),
+FOREIGN KEY (ProductID)
+REFERENCES sales.products(ProductID)
+);
+
+CREATE TABLE sales.payments (
+PaymentID INT PRIMARY KEY,
+OrderID INT,
+PaymentDate DATE,
+PaymentStatus VARCHAR (50),
+FOREIGN KEY (OrderID)
+REFERENCES sales.orders(OrderID)
+);
